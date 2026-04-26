@@ -1,0 +1,5 @@
+.stars { display: inline-flex; gap: 1px; }
+.star { color: #f59e0b; }
+.sm .star { font-size: 13px; }
+.md .star { font-size: 16px; }
+.lg .star { font-size: 22px; }

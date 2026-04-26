@@ -1,0 +1,119 @@
+.card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--washu-red);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+
+.code {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--washu-red);
+  margin-right: 8px;
+  letter-spacing: 0.3px;
+}
+
+.dept {
+  font-size: 12px;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.statNum {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.green { color: var(--green); }
+
+.divider {
+  width: 1px;
+  height: 16px;
+  background: var(--gray-200);
+  flex-shrink: 0;
+}
+
+.reviewCount {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--gray-500);
+  flex-shrink: 0;
+}
+
+/* difficulty badge colors */
+.easyBadge { background: var(--green-light); color: var(--green); margin-left: 0; }
+.mediumBadge { background: var(--yellow-light); color: var(--yellow); margin-left: 0; }
+.hardBadge { background: var(--red-light); color: var(--washu-red); margin-left: 0; }

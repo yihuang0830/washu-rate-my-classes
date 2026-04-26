@@ -1,0 +1,82 @@
+.card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.professor {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.semester {
+  font-size: 12px;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 1px 8px;
+  border-radius: 99px;
+}
+
+.grade {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.scores {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.scoreVal {
+  font-size: 12px;
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+.dot {
+  color: var(--gray-300);
+}
+
+.scoreChip {
+  font-size: 12px;
+  color: var(--gray-700);
+}
+
+.comment {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.helpful { font-size: 12px; }

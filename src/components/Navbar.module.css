@@ -1,0 +1,47 @@
+.nav {
+  background: var(--washu-red);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logoSub {
+  color: rgba(255,255,255,0.82);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.actions { display: flex; gap: 10px; }
+
+.btn {
+  background: #fff;
+  color: var(--washu-red);
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: opacity 0.15s;
+}
+
+.btn:hover { opacity: 0.88; }

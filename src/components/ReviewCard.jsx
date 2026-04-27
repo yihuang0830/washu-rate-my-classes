@@ -39,10 +39,11 @@ export default function ReviewCard({ review }) {
       </div>
       <p className={styles.comment}>{review.comment}</p>
       <div className={styles.footer}>
-        <span className={styles.date}>{review.timestamp}</span>
-        {review.helpful > 0 && (
-          <span className={styles.helpful}>👍 {review.helpful} 人觉得有用</span>
-        )}
+        <span className={styles.date}>
+          {review.created_at
+            ? new Date(review.created_at).toLocaleDateString("zh-CN")
+            : review.timestamp}
+        </span>
       </div>
     </div>
   );

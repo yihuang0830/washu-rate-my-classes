@@ -1,0 +1,36 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--gray-500);
+  min-width: 40px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 24px;
+  color: var(--gray-300);
+  padding: 0 1px;
+  transition: color 0.1s, transform 0.1s;
+  line-height: 1;
+}
+
+.star:hover,
+.filled {
+  color: #f59e0b;
+  transform: scale(1.15);
+}
+
+.val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-700);
+}

@@ -10,49 +10,64 @@ function difficultyLabel(d) {
 
 export default function CourseCard({ course }) {
   const diff = difficultyLabel(course.avgDifficulty);
+  const hasStats = course.reviewCount > 0;
 
   return (
     <Link to={`/course/${course.id}`} className={styles.card}>
-      <div className={styles.header}>
-        <div>
+      {/* Top row */}
+      <div className={styles.topRow}>
+        <div className={styles.codeWrap}>
           <span className={styles.code}>{course.code}</span>
-          <span className={`badge ${styles[diff.cls + "Badge"]}`}>{diff.text}</span>
+          <span className={`${styles.diffBadge} ${styles[diff.cls]}`}>{diff.text}</span>
         </div>
         <span className={styles.dept}>{course.department}</span>
       </div>
 
+      {/* Title */}
       <h3 className={styles.name}>{course.name}</h3>
 
-      <p className={styles.desc}>{course.description}</p>
+      {/* Professors */}
+      <p className={styles.profs}>{course.professors.join(" · ")}</p>
 
+      {/* Tags */}
       <div className={styles.tags}>
-        {course.tags.map((t) => (
+        {course.tags.slice(0, 4).map((t) => (
           <span key={t} className={styles.tag}>{t}</span>
         ))}
       </div>
 
-      <div className={styles.stats}>
-        <div className={styles.stat}>
-          <StarRating value={course.avgOverall} size="sm" />
-          <span className={styles.statNum}>{course.avgOverall.toFixed(1)}</span>
-          <span className={styles.statLabel}>综合</span>
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.stat}>
-          <span className={styles.statNum}>{course.avgDifficulty.toFixed(1)}</span>
-          <span className={styles.statLabel}>难度 /5</span>
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.stat}>
-          <span className={styles.statNum}>{course.avgWorkload}h</span>
-          <span className={styles.statLabel}>周均时间</span>
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.stat}>
-          <span className={`${styles.statNum} ${styles.green}`}>{course.wouldTakeAgain}%</span>
-          <span className={styles.statLabel}>愿意重选</span>
-        </div>
-        <div className={styles.reviewCount}>{course.reviewCount} 条评价</div>
+      {/* Stats */}
+      <div className={styles.statsWrap}>
+        {hasStats ? (
+          <>
+            <div className={styles.statsGrid}>
+              <div className={styles.statCell}>
+                <div className={styles.statMain}>
+                  <span className={styles.statBig}>{course.avgOverall?.toFixed(1)}</span>
+                  <StarRating value={course.avgOverall} size="sm" />
+                </div>
+                <span className={styles.statSub}>综合</span>
+              </div>
+              <div className={styles.statCell}>
+                <span className={styles.statBig}>{course.avgDifficulty?.toFixed(1)}</span>
+                <span className={styles.statSub}>难度 /5</span>
+              </div>
+              <div className={styles.statCell}>
+                <span className={styles.statBig}>{course.avgWorkload}<span className={styles.statUnit}>h</span></span>
+                <span className={styles.statSub}>周均</span>
+              </div>
+              <div className={styles.statCell}>
+                <span className={`${styles.statBig} ${course.wouldTakeAgain >= 70 ? styles.green : styles.orange}`}>
+                  {course.wouldTakeAgain}%
+                </span>
+                <span className={styles.statSub}>愿意重选</span>
+              </div>
+            </div>
+            <div className={styles.reviewBadge}>{course.reviewCount} 条评价</div>
+          </>
+        ) : (
+          <span className={styles.noReviews}>暂无评价 — 来写第一条</span>
+        )}
       </div>
     </Link>
   );

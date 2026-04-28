@@ -64,6 +64,7 @@ export default function HomePage() {
             真实的课程评价 · 往年试卷 · Syllabus · 由中国学生会维护
           </p>
           <div className={styles.searchRow}>
+            <span className={styles.searchIcon}>🔍</span>
             <input
               className={styles.searchInput}
               type="text"
